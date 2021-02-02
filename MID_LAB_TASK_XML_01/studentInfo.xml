@@ -1,0 +1,27 @@
+<studentInfo>
+
+	<student0 sl='0'>
+		<slNo>SL.NO.</slNo>
+		<name>NAME</name>
+		<admissionDate>ADMISSION DATE</admissionDate>
+	</student0>
+	
+	<student1 sl='23'>
+		<slNo>23</slNo>
+		<name>John Cartel</name>
+		<admissionDate>25/12/2015</admissionDate>
+	</student1>
+	
+	<student2 sl='29'>
+		<slNo>29</slNo>
+		<name>Bob Marshal</name>
+		<admissionDate>13/01/1999</admissionDate>
+	</student2>
+	
+	<student3 sl='35'>
+		<slNo>35</slNo>
+		<name>Clark Kent</name>
+		<admissionDate>17/06/2005</admissionDate>
+	</student3>
+	
+</studentInfo>
