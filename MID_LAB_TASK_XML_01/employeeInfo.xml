@@ -3,7 +3,12 @@
 	<employee0 id='0'>
 		<id>ID</id>
 		<name>NAME</name>
-		<address>ADDRESS</address>
+		<address>
+			ADDRESS
+			<location></location>
+			<area></area>
+			<city></city>
+		</address>
 		<department>DEPARTMENT</department>
 		<salary>SALARY</salary>
 	</employee0>
@@ -11,7 +16,11 @@
 	<employee1 id='1'>
 		<id>1</id>
 		<name>John Doe</name>
-		<address>H# 38, R#3, Banani, Dhaka</address>
+		<address>
+			<location>H# 38, R#3</location>
+			<area>Banani</area>
+			<city>Dhaka</city>
+		</address>
 		<department>Sales</department>
 		<salary>$20000</salary>
 	</employee1>
@@ -19,7 +28,11 @@
 	<employee2 id='2'>
 		<id>2</id>
 		<name>Mark Zuckerberg</name>
-		<address>Flat# A/1, H# 20, R#18, Mirpur, Dhaka</address>
+		<address>
+			<location>Flat# A/1, H# 20, R#18</location>
+			<area>Mirpur</area>
+			<city>Dhaka</city>
+		</address>
 		<department>$12000</department>
 		<salary>SALARY</salary>
 	</employee2>
@@ -27,7 +40,11 @@
 	<employee3 id='3'>
 		<id>3</id>
 		<name>Ala Voski</name>
-		<address>H# 38, R#3, Motijheel</address>
+		<address>
+			<location>H# 38, R#3</location>
+			<area>Motijheel</area>
+			<city></city>
+		</address>
 		<department>Human Resource</department>
 		<salary>$30000</salary>
 	</employee3>
