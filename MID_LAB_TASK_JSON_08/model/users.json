@@ -1,0 +1,12 @@
+[
+	{
+		"Id" 	: 12,
+		"name"	: "ALAMIN",
+		"email"	: "alamin@aiub.edu"
+	}
+	{
+		"Id" 	: 21,
+		"name"	: "TALHA",
+		"email"	: "t@aiub.edu"
+	}
+]	
