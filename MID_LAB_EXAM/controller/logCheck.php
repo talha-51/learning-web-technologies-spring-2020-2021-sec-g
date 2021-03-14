@@ -20,12 +20,12 @@
 				if($user['id'] == $id && $user['password'] == $password){
 					if($username[0]=='a'){
 						$_SESSION['flag'] = true;
-						$_SESSION['username'] = $username;
+						$_SESSION['id'] = $id;
 						header('location: ../view/aHome.php');
 					}
 					else if($username[0]=='u'){
 						$_SESSION['flag'] = true;
-						$_SESSION['username'] = $username;
+						$_SESSION['id'] = $id;
 						header('location: ../view/uHome.php');
 					}
 				}else{
