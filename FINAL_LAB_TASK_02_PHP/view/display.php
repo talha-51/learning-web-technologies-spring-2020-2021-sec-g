@@ -22,8 +22,8 @@
 					<tr>
 						<td>{$var['name']}</td>
 						<td>{$int['profit']}</td>
-						<td><a href='edit.php?id={$var['ID']}'>edit</a> |
-							<a href='../controller/delete.php?id={$var['ID']}'>delete</a>
+						<td><a href='edit.php?id={$var['name']}'>edit</a> |
+							<a href='../controller/delete.php?id={$var['name']}'>delete</a>
 						</td>
 						
 				";
