@@ -20,7 +20,7 @@
 			$status = insertProduct($product);				
 
 			if($status){
-				header('location: ../view/display.html');
+				header('location: ../view/display.php');
 			}else{
 				echo "error..try again";
 			}
