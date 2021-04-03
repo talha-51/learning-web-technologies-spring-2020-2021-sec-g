@@ -1,48 +1,46 @@
 <?php
+	
 	$title = "User List Page";
 	include('header.php');
 	require_once('../model/userModel.php');
+	$users = getAllUser();
+
 ?>
 
-	<a href="home.php">Back</a> |
-	<a href="../controller/logout.php">logout</a>	
-	<br>
-	
-	<h1>User list</h1>
+	<div id="page_title">
+		<h1>User List Page</h1>		
+	</div>
 
-	<?php 
-		echo "<table border='1'>
-		<tr>
-			<td>ID</td>
-			<td>Name</td>
-			<td>email</td>
-			<td>Action</td>
-		</tr>";
-	
-		$row=getAllUser();
+	<div id="nav_bar">
 		
-		foreach($row as $var){
-			
-			echo "
-					<tr>
-						<td>{$var['ID']}</td>
-						<td>{$var['name']}</td>
-						<td>{$var['email']}</td>
-						<td><a href='edit.php?id={$var['ID']}'>edit</a> |
-							<a href='../controller/delete.php?id={$var['ID']}'>delete</a>
-						</td>
-						
-				";
-				//?id={$row['ID']}
-			
-		}
+		<a href="home.php">Back</a> |		
+		<a href="../controller/logout.php">Logout</a>		
+	</div>
 
-			echo "</table>";
-
-
-?>
-
+	<div id="main_content">
 	
-<?php
-	include('footer.php');
-?>
+		<table border="1">
+			<tr>
+				<td>ID</td>
+				<td>NAME</td>
+				<td>EMAIL</td>
+				<td>ACTION</td>
+			</tr>
+			
+			<?php for($i=0; $i < count($users); $i++){ ?>
+			<tr>
+				<td><?=$users[$i]['id']?></td>
+				<td><?=$users[$i]['username']?></td>
+				<td><?=$users[$i]['email']?></td>
+				<td>
+					<a href="edit.php"> EDIT </a> |
+					<a href="delete.php"> DELETE </a> 
+				</td>
+			</tr>
+
+			<?php } ?>
+		</table>
+			
+	</div>
+
+<?php include('footer.php') ?>

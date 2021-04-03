@@ -1,40 +1,48 @@
 <?php
-	require_once('../model/userModel.php');
-	$title = "Edit Page";
+	$title= "Edit Page";
 	include('header.php');
-	$id=$_GET['id'];
-	$data=getUserbyId($id);
 
-	$_SESSION['edit_id']=$id;
+	
+	//echo $_GET['email'];
 ?>
 
-	<form method="post" action="../controller/update.php">
-		<fieldset>
-			<legend>EDIT User</legend>
-			<table>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="name" value="<?php echo$data['name'] ?>"></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" name="pass" value="<?php echo$data['password'] ?>"></td>
-				</tr>
+
+	<div id="page_title">
+		<h1>Edit Page <?php echo $_SESSION['id'];?></h1>
+	</div>
+
+	<div id='nav_bar'>
+		<a href="user_list.php"> Back</a> |
+		<a href="../controller/logout.php"> logout</a>	
+	</div>
+
+	<div id="main_content">
+		<form method="post" action="../controller/update.php">
+			<fieldset>
+				<legend>Create New</legend>
+				<table>
+					<tr>
+						<td>Username</td>
+						<td><input type="text" name="username" value=""> </td>
+					</tr>
+					<tr>
+						<td>Password</td>
+						<td><input type="password" name="password" value=""> </td>
+					</tr>
 				
-				<tr>
-					<td>Email</td>
-					<td><input type="email" name="email" value="<?php echo$data['email'] ?>"></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<input type="submit" name="submit" value="Update"> 
-						<a href="user_list.php">Back</a>
-					</td>
-				</tr>
-			</table>
-		</fieldset>
-	</form>
-<?php
-	include('footer.php');
-?>
+					<tr>
+						<td>Email</td>
+						<td><input type="email" name="email" value=""> </td>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="submit" name="signup" value="Update">
+						</td>
+					</tr>
+				</table>
+			</fieldset>
+		</form>
+	</div>
+
+	<?php include('footer.php'); ?>

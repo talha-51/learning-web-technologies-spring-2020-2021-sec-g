@@ -1,6 +1,6 @@
 <?php
 
-	$dbname = "usermgt";
+	$dbname = "webtech";
 	$dbuser	= "root";
 	$dbpass	= "";
 	$host	= "localhost";
