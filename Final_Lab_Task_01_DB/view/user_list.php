@@ -33,7 +33,7 @@
 				<td><?=$users[$i]['username']?></td>
 				<td><?=$users[$i]['email']?></td>
 				<td>
-					<a href="edit.php"> EDIT </a> |
+					<a href="edit.php"> <?php $_SESSION['id'] = $users[$i]['id'];?> EDIT </a> |
 					<a href="delete.php"> DELETE </a> 
 				</td>
 			</tr>

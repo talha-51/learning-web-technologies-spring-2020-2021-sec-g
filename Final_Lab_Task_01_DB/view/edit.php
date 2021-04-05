@@ -8,7 +8,7 @@
 
 
 	<div id="page_title">
-		<h1>Edit Page <?php echo $_SESSION['id'];?></h1>
+		<h1>Edit Page <?php echo $_SESSION['id']; echo $_SESSION['username']?></h1>
 	</div>
 
 	<div id='nav_bar'>

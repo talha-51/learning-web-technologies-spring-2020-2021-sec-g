@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2021 at 04:38 AM
+-- Generation Time: Mar 24, 2021 at 03:52 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.2
 
@@ -28,19 +28,21 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `products` (
-  `name` varchar(20) NOT NULL,
-  `buyingPrice` int(10) NOT NULL,
-  `sellingPrice` int(10) NOT NULL
+  `id` int(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `buyingPrice` int(50) NOT NULL,
+  `sellingPrice` int(50) NOT NULL,
+  `displayable` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`name`, `buyingPrice`, `sellingPrice`) VALUES
-('Samsung', 2000, 7000),
-('Nokia', 5000, 6500),
-('Xiaomi', 1000, 4300);
+INSERT INTO `products` (`id`, `name`, `buyingPrice`, `sellingPrice`, `displayable`) VALUES
+(0, 'Nokia', 1800, 1500, 'Yes'),
+(0, 'Xiaomi', 2000, 3000, 'No'),
+(0, 'Samsung', 120000, 150000, 'No');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
