@@ -16,29 +16,30 @@
 			<tr>
 				<td>
 					Email<br>
-					<input type="email" name="email" value=""><br>
-					<input type="submit" name="submit" value="Submit">
+					<input type="email" name="email" id="email" value=""><br>
+					<input type="submit" name="submit" value="Submit" onclick="validateEmail()">
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<fieldset>
 						<legend>Gender</legend>	
-						<input type="radio" name="gender" value=""> Male
-						<input type="radio" name="gender" value=""> Female
-						<input type="radio" name="gender" value=""> Other 
+						<input type="radio" name="gender" id="g1" value=""> Male
+						<input type="radio" name="gender" id="g2" value=""> Female
+						<input type="radio" name="gender" id="g3" value=""> Other 
 					</fieldset>
-					<input type="submit" name="submit" value="Submit">
+					<input type="submit" name="submit" value="Submit" onclick="validateGender()">
 				</td>
 			</tr>
 			<tr>
 				<td>
 					<fieldset>
 						<legend>Date of Birth</legend>
-						<input type="number" name="dd" style="width:30px;" value="">/ 
-						<input type="number" name="mm" style="width:30px;" value="">/
-						<input type="number" name="yyyy" style="width:30px;" value=""> <br>
-						<input type="submit" name="submit" value="Submit">	
+						<input type="number" name="dd" id="dd" style="width:30px;" value="">/ 
+						<input type="number" name="mm" id="mm" style="width:30px;" value="">/
+						<input type="number" name="yyyy" id="yy" style="width:30px;" value=""> <br>
+
+						<input type="submit" name="submit" value="Submit" onclick="validateDOB()">	
 					</fieldset>
 				</td>
 			</tr>
@@ -46,17 +47,17 @@
 				<td>
 					<fieldset> 
 						<legend>Degree</legend>
-						<input type="checkbox" name="" value="SSC"> SSC
-						<input type="checkbox" name="" value="HSC"> HSC
-						<input type="checkbox" name="" value="BSc"> BSc
+						<input type="checkbox" name="" id="d1" value="SSC"> SSC
+						<input type="checkbox" name="" id="d2" value="HSC"> HSC
+						<input type="checkbox" name="" id="d3" value="BSc"> BSc
 					</fieldset><br>
-					<input type="submit" name="submit" value="Submit">
+					<input type="submit" name="submit" value="Submit" onclick="validateDegree()">
 				</td>
 			</tr>
 			<tr>
 				<td>
 					Blood Group
-            		<select name="bloodGroup">
+            		<select name="bloodGroup" id="bg">
 						<option value="A+">A+</option>
 						<option value="A-">A-</option>
 						<option value="B+">B+</option>
@@ -66,7 +67,7 @@
 						<option value="O+">O+</option>
 						<option value="O-">O-</option>
 					</select><br>
-        			<input type="submit" name="submit" value="Submit">
+        			<input type="submit" name="submit" value="Submit" onclick="validateBG()">
 				</td>
 			</tr>
 			<tr>
@@ -74,10 +75,10 @@
 					<fieldset>
 						<legend>Profile Picture</legend>
 						User Id
-						<input type="text" name="id" value=""> <br>
+						<input type="text" name="id" id="id" value=""> <br>
 						Picture
-						<input type="file" name="myPicture" value=""> <br>
-						<input type="submit" name="submit" value="Submit">
+						<input type="file" name="myPicture" id="file" value=""> <br>
+						<input type="submit" name="submit" value="Submit" onclick="validateProfPic()">
 					</fieldset>
 				</td>
 			</tr>
@@ -108,6 +109,88 @@
 				}
 			}
 		}
+
+		function validateEmail(){
+			let email= document.getElementById('email').value;
+			
+			if(email == ""){
+				alert("NULL Value");
+			}
+		}
+
+		function validateGender(){
+			let g1= document.getElementById('g1');
+			let g2= document.getElementById('g2');
+			let g3= document.getElementById('g3');
+			
+			if(g1.checked == true || g2.checked == true || g3.checked == true){
+				alert("Validation Successfull");
+			}
+			else{
+				alert("NULL Value");
+			}
+		}
+
+		function validateDOB(){
+			let dd = document.getElementById('dd').value;
+ 			let mm = document.getElementById('mm').value;
+ 			let yy = document.getElementById('yy').value;
+			
+			if(dd == '' || mm == '' || yy == ''){
+				alert("NULL Value");
+			}
+			else if(dd >= 0 && dd <=31 && mm >=1 && mm <=12 && yy >=1900 && yy <= 2016 ){
+				alert("Validation Successfull");
+			}
+			
+      		else{
+				alert("Must be a valid number (dd: 0-31, mm: 1-12, yyyy: 1900-2016)");
+			}
+		}
+
+		function validateDegree(){
+			let d1= document.getElementById('d1');
+			let d2= document.getElementById('d2');
+			let d3= document.getElementById('d3');
+			
+			if(d1.checked == true || d2.checked == true || d3.checked == true){
+				alert("Validation Successfull");
+			}
+			else{
+				alert("NULL Value");
+			}
+		}
+
+		function validateBG(){
+			let bg= document.getElementById('bg').value;
+			
+			
+			if(bg == ""){
+				alert("None Selected");
+			}
+			else{
+				alert("Validation Successfull");
+			}
+		}
+
+		function validateProfPic(){
+			let id= document.getElementById('id').value;
+			let file= document.getElementById('file').value;
+			var userid = parseInt(id);
+			
+			if(userid == "" || !(id > 0)){
+				alert("Make sure your ID is not empty and it's a positive number");
+			}
+			else{
+				if(file == ""){
+					alert("Picture cannot be empty");
+				}
+				else{
+					alert("Validation Successfull");
+				}
+			}			
+		}
+
 	</script>
 </body>
 </html>
